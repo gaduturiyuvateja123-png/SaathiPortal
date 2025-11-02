@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About SAATHI - 2 Town Police, Vizianagaram</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+  :root {
+    --primary: #1a365d;
+    --secondary: #2d3748;
+    --accent: #e53e3e;
+    --light: #f7fafc;
+    --dark: #2d3748;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+  }
+  nav {
+   background-color: #8B0000;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    font-size: 1rem;
+  }
+  nav .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 0;
+  }
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  .nav-links li {
+    margin-left: 20px;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+  }
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+  }
+  .nav-links a.active {
+    background-color: var(--accent);
+    font-weight: 700;
+    color: white;
+    pointer-events: none;
+  }
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  h1 {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin: 2.5rem 0 1rem;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  .text-content {
+    flex: 1 1 360px;
+  }
+  .poster-content {
+    flex: 1 1 320px;
+    text-align: center;
+  }
+  .poster-content img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  .section-title {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.3rem;
+  }
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+  }
+  /* Language blocks */
+  .lang-block {
+    border-left: 3px solid var(--accent);
+    margin-left: 1rem;
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--secondary);
+  }
+  a.btn-back {
+    display: inline-block;
+    margin: 2rem 0 0;
+    padding: 10px 25px;
+    background: var(--primary);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  a.btn-back:hover {
+    background: var(--accent);
+  }
+  footer {
+    background: var(--primary);
+    color: #fff;
+    padding: 2rem 20px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  @media(max-width:768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .text-content, .poster-content {
+      flex: 1 1 100%;
+      max-width: 600px;
+    }
+    .menu-toggle {
+      display: block;
+    }
+    nav .nav-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+    }
+    .nav-links.show {
+      display: flex;
+    }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <div class="nav-brand">SAATHI</div>
+    <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About SAATHI</a></li>
+      <li><a href="initiatives.html">Initiatives</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<h1>About SAATHI</h1>
+
+<div class="container">
+  <div class="text-content">
+    <section>
+      <h2 class="section-title">Our Purpose</h2>
+      <p>SAATHI is a community-police partnership initiative by the 2 Town Police of Vizianagaram. It is designed to bridge the gap between law enforcement and citizens by fostering transparency, communication, and mutual trust.</p>
+      <p class="lang-block">సాథి అనేది 2 టౌన్ పోలీస్ విభాగం ద్వారా ఆమోదించబడిన కమ్యూనిటీ-పోలీస్ భాగస్వామ్య కార్యక్రమం. ఇది పోలీస్ మరియు పౌరుల మధ్య పారదర్శకత, కమ్యూనికేషన్ మరియు పరస్పర నమ్మకాన్ని పెంపొందిస్తూ వంగా విరుద్ధతలను తగ్గిస్తుంది.</p>
+      <p class="lang-block">साथी विजयनगरम के 2 टाउन पुलिस द्वारा एक सामुदायिक-पुलिस भागीदारी पहल है। यह कानून प्रवर्तन और नागरिकों के बीच पारदर्शिता, संवाद और पारस्परिक विश्वास को बढ़ावा देने के लिए डिज़ाइन किया गया है।</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Our Mission</h2>
+      <p>Our mission is to create a safer community by encouraging collaboration between police and residents. Through proactive engagement, SAATHI empowers citizens to participate actively in addressing local safety concerns and building lasting relationships.</p>
+      <p class="lang-block">మా లక్ష్యం పోలీసు మరియు నివాసితులు సహకారంతో సురక్షిత సమాఖ్యను కల్పించడం. ప్రాక్టివ్ వ్యవహారం ద్వారా, సాథి స్థానిక భద్రతా సమస్యలను పరిష్కరించడంలో పౌరులను సక్రియంగా పాల్గొనడానికి ఉత్తేజితం చేస్తుంది.</p>
+      <p class="lang-block">हमारा मिशन पुलिस और निवासियों के बीच सहयोग को प्रोत्साहित करके एक सुरक्षित समुदाय बनाना है। सक्रिय जुड़ाव के माध्यम से, साथी नागरिकों को स्थानीय सुरक्षा चिंताओं को संबोधित करने और स्थायी रिश्ते बनाने में सक्रिय रूप से भाग लेने के लिए सशक्त बनाता है।</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Our Vision</h2>
+      <p>To develop a transparent, inclusive, and secure community where every voice matters and public safety is a shared responsibility.</p>
+      <p class="lang-block">సక్రమంగా, సమగ్రంగా మరియు సురక్షితంగా ఉన్న సమాజాన్ని అభివృద్ధి చేయడం, ప్రతి వ్యక్తి మాట వినబడేలా మరియు ప్రజా భద్రత అన్ని బాధ్యతగా పంచుకునేలా</p>
+      <p class="lang-block">एक पारदर्शी, समावेशी और सुरक्षित समुदाय विकसित करना जहां हर आवाज़ मायने रखती है और सार्वजनिक सुरक्षा एक साझा जिम्मेदारी है।</p>
+    </section>
+
+    <a href="index.html" class="btn-back">&larr; Back to Home</a>
+  </div>
+
+  <div class="poster-content">
+    <img src="assets/posterofsaathi.jpg" alt="SAATHI Poster" />
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 SAATHI - 2 Town Police, Vizianagaram. All rights reserved.
+</footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Initiatives - SAATHI 2 Town Police, Vizianagaram</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+  :root {
+    --primary: #1a365d;
+    --secondary: #2d3748;
+    --accent: #e53e3e;
+    --light: #f7fafc;
+    --dark: #2d3748;
+  }
+
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    background: #f0f4f8;
+    color: var(--dark);
+    line-height: 1.6;
+  }
+
+  /* Navigation Bar */
+  nav {
+    background-color: #8B0000;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    font-size: 1rem;
+  }
+
+  nav .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+
+  .nav-links li {
+    margin-left: 20px;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+  }
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+  }
+  .nav-links a.active {
+    background-color: var(--accent);
+    font-weight: 700;
+    color: white;
+    pointer-events: none;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 2rem 0;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Container */
+  .container {
+    max-width: 960px;
+    margin: 0 auto 3rem;
+    padding: 0 20px;
+  }
+
+  /* Section title */
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: "";
+    display: block;
+    margin: 0.5rem auto 0;
+    width: 80px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  /* Initiative cards */
+  .initiatives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .initiative-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.8rem 1.5rem;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .initiative-card:hover {
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+  }
+
+  .initiative-card i {
+    font-size: 3.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .initiative-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary);
+  }
+
+  .initiative-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  a.btn-back {
+    display: inline-block;
+    margin: 2rem 0;
+    padding: 10px 25px;
+    background: var(--primary);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  a.btn-back:hover {
+    background: var(--accent);
+  }
+
+  /* Footer */
+  footer {
+    background: var(--primary);
+    color: #fff;
+    padding: 2rem 20px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+    nav .nav-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+    }
+    .nav-links.show {
+      display: flex;
+    }
+  }
+</style>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav>
+  <div class="nav-container">
+    <div class="nav-brand">SAATHI</div>
+    <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="initiatives.html" class="active">Initiatives</a></li>
+      <li><a href="activities.html">Activities</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Header -->
+<div class="header">
+  <h1>Our Initiatives</h1>
+  <p>Committed to safety, awareness, and community partnership.</p>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="initiatives-grid">
+
+    <div class="initiative-card">
+      <i class="fas fa-shield-alt"></i>
+      <h3>Community Policing</h3>
+      <p>Building strong relationships with community members to collaboratively identify and solve safety issues.</p>
+    </div>
+
+    <div class="initiative-card">
+      <i class="fas fa-video"></i>
+      <h3>Awareness Programs</h3>
+      <p>Hosting workshops, seminars, and campaigns about crime prevention, traffic safety, and emergency preparedness.</p>
+    </div>
+
+    <div class="initiative-card">
+      <i class="fas fa-comments"></i>
+      <h3>Open Communication</h3>
+      <p>Establishing open communication channels including hotlines and social media platforms to report issues and share updates.</p>
+    </div>
+
+    <div class="initiative-card">
+      <i class="fas fa-hands-helping"></i>
+      <h3>Volunteer Support</h3>
+      <p>Engaging dedicated volunteers to support community patrols, educational efforts, and victim assistance programs.</p>
+    </div>
+
+    <div class="initiative-card">
+      <i class="fas fa-cogs"></i>
+      <h3>Technology Integration</h3>
+      <p>Utilizing modern technology and data analytics to improve policing efficiency and responsiveness.</p>
+    </div>
+
+    <div class="initiative-card">
+      <i class="fas fa-bullhorn"></i>
+      <h3>Emergency Alerts</h3>
+      <p>Providing timely alerts and warnings to residents via WhatsApp, SMS, and social media channels.</p>
+    </div>
+
+  </div>
+
+  <a href="index.html" class="btn-back">&larr; Back to Home</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 SAATHI - 2 Town Police, Vizianagaram. All rights reserved.
+</footer>
+
+<!-- Mobile menu toggle -->
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+</body>
+</html>

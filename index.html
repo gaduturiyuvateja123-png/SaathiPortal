@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAATHI - 2 Town Police, Vizianagaram</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #e53e3e;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --highlight: #4299e1;
+            --gold: #d4af37;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .police-logo {
+            width: 100px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .police-logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+        }
+
+        .logo-text h1 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .initiative-badge {
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        .logo-left {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+
+        .logo-right {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #8b0000; /* dark red */
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            transition: max-height 0.3s ease;
+            overflow: hidden;
+            max-height: 1000px; /* default large so visible on desktop */
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: rgb(7, 14, 48);
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            z-index: 10;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://pbs.twimg.com/media/FLj4dKlVIAMdpxI.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Button base styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Button Hover Animations */
+        .btn:hover, .btn:focus {
+            background: #c53030;
+            transform: translateY(-2px);
+        }
+
+        /* Outlined button style & hover */
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            font-weight: 600;
+            padding: 10px 28px;
+        }
+
+        .btn-outline:hover, .btn-outline:focus {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Read More button animation */
+        .about-text .btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-text .btn::after {
+            content: '';
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: left 0.3s ease;
+            pointer-events: none;
+        }
+
+        .about-text .btn:hover::after, .about-text .btn:focus::after {
+            left: 0;
+        }
+
+        /* Social and Connect buttons animation */
+        .social-card .btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .social-card .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+            z-index: 0;
+        }
+
+        .social-card .btn:hover::before, .social-card .btn:focus::before {
+            left: 0;
+        }
+
+        .social-card .btn:hover, .social-card .btn:focus {
+            color: white;
+            transform: translateY(-2px);
+            z-index: 1;
+        }
+
+        /* Image Slider Section */
+        .image-slider {
+            padding: 3rem 0;
+            background: var(--light);
+            overflow: hidden;
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 25%;
+            padding: 0 10px;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: var(--primary);
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Initiatives Section */
+        .initiatives {
+            padding: 4rem 0;
+            background: var(--light);
+        }
+
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .initiative-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--primary);
+        }
+
+        .initiative-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .initiative-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .initiative-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* Social Media Section */
+        .social-media {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .social-card {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--highlight);
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-card i {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-card.facebook i {
+            color: #3b5998;
+        }
+
+        .social-card.youtube i {
+            color: #ff0000;
+        }
+
+        .social-card.instagram i {
+            color: #e1306c;
+        }
+
+        .social-card.whatsapp i {
+            color: #25d366;
+        }
+
+        .social-card.x i {
+            color: #1da1f2;
+        }
+
+        .social-card.aratti i {
+            color: #ff6600;
+        }
+
+        .social-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .social-card p {
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        /* Team Section */
+        .team {
+            padding: 4rem 0;
+            background: var(--light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-img {
+            height: 300px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-img-placeholder {
+            font-size: 4rem;
+            opacity: 0.7;
+        }
+
+        .team-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-info p {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cbd5e0;
+            font-size: 0.9rem;
+        }
+
+        /* SAATHI Logo Section */
+        .saathi-logo-section {
+            padding: 3rem 0;
+            background: white;
+            text-align: center;
+        }
+
+        .saathi-logo {
+            max-width: 300px;
+            margin: 0 auto 2rem;
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .saathi-logo h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .saathi-logo p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .nav-links {
+                max-height: 0;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-links.show {
+                max-height: 500px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .logo-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .logo-left,
+            .logo-right {
+                position: relative;
+                left: auto;
+                right: auto;
+                top: auto;
+                margin: 10px auto;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .slide {
+                min-width: 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .saathi-logo h2 {
+                font-size: 2.5rem;
+            }
+
+            .slide {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-left police-logo">
+            <!-- Replace with actual police logo image -->
+            <img
+              src="Assets/Appolice(emblem) (1).png"
+              alt="Andhra Pradesh Police Logo"
+            />
+        </div>
+
+        <div class="logo-text">
+            <h1>TWO TOWN POLICE STATION</h1>
+            <span
+              >Vizianagaram,<pin class="code">535002 </pin
+              >Vizianagaram Andhra Pradesh</span
+            >
+        </div>
+
+        <div class="logo-right police-logo">
+            <img src="assets/vzmpolicelogo.png" alt="Vizianagaram Logo" />
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About SAATHI</a></li>
+                <li><a href="initiatives.html">Initiatives</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="Support.html">Support</a></li>
+            </ul>
+
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Image Slider Section -->
+    <section class="image-slider">
+        <div class="container">
+            <h2 class="section-title">Our Community Initiatives</h2>
+            <div class="slider-container">
+                <div class="slider-track">
+                    <div class="slide">
+                        <img src="assets/slides/1.jpg" alt="Community Event" />
+                    </div>
+                    <div class="slide">
+                        <img
+                          src="https://images.unsplash.com/photo-1581092580383-8c3b1dc3a1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                          alt="Police Training"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img src="assets/slides/3.jpg" alt="Safety Awareness" />
+                    </div>
+                    <div class="slide">
+                        <img
+                          src="https://images.unsplash.com/photo-1581092580383-8c3b1dc3a1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                          alt="Community Outreach"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img src="assets/slides/4.jpg" alt="Police Training" />
+                    </div>
+                    <div class="slide">
+                        <img
+                          src="https://images.unsplash.com/photo-1581092580383-8c3b1dc3a1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                          alt="Safety Awareness"
+                        />
+                    </div>
+                    <div class="slide">
+                        <img src="assets/slides/2.jpg" alt="Community Outreach" />
+                    </div>
+                    <div class="slide">
+                        <img
+                          src="https://images.unsplash.com/photo-1581093458791-8a6a6e7ee3c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                          alt="Police Training"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <div class="slider-dot active" data-index="0"></div>
+                <div class="slider-dot" data-index="1"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Community-Police Partnership</h2>
+            <p>
+                Join hands with 2 Town Police, Vizianagaram to build a safer
+                community together
+            </p>
+            <div class="hero-buttons">
+                <a href="#" class="btn">Join SAATHI</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">About SAATHI</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Building Trust Through Connection</h3>
+                    <p>
+                        SAATHI is a pioneering initiative by 2 Town Police,
+                        Vizianagaram designed to bridge the gap between law
+                        enforcement and the community. Through this platform, we
+                        aim to foster transparency, cooperation, and mutual
+                        understanding.
+                    </p>
+                    <p>
+                        Our mission is to create a safer community by working
+                        together with citizens, addressing concerns proactively,
+                        and building lasting relationships based on trust and
+                        respect.
+                    </p>
+                    <a href="about.html" class="btn">Read More</a>
+                </div>
+                <div class="about-image">
+                    <img src="assets/posterofsaathi.jpg" alt="SAATHI Poster" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Our Leadership</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-img">
+                        <!-- Replace with actual image of SPI A.R. Damoonar -->
+                        <div class="team-img-placeholder">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <img
+                          src="assets/officers/spsir.png"
+                          alt="SRI A.R. Damoodhar"
+                        />
+                    </div>
+                    <div class="team-info">
+                        <h3>SRI A.R. DAMOODHAR, IPS..,</h3>
+                        <p>Superintendent of Police</p>
+                        <p>Vizianagaram District</p>
+                        <p>Initiative Lead</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img">
+                        <!-- Replace with actual image of L. Srinivasa Rao -->
+                        <div class="team-img-placeholder">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <img src="assets/officers/shosir.png" alt="L. Srinivasa Rao" />
+                    </div>
+                    <div class="team-info">
+                        <h3>T. Srinivasa Rao</h3>
+                        <p>Station House Officer</p>
+                        <p>II-Town Police Station</p>
+                        <p>Program Coordinator</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-img">
+                        <div class="team-img-placeholder">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>SAATHI Volunteers</h3>
+                        <p>Community Members & Police Personnel</p>
+                        <p>Program Implementers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-media">
+        <div class="container">
+            <h2 class="section-title">Connect With Us @ SAATHI</h2>
+            <p
+              style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem"
+            >
+                Follow us on our social media platforms for updates, safety tips,
+                and community engagement
+            </p>
+            <div class="social-grid">
+                <div class="social-card facebook">
+                    <i class="fab fa-facebook"></i>
+                    <h3>Facebook SAATHI</h3>
+                    <p>
+                        Follow our official Facebook page for community updates and
+                        safety information
+                    </p>
+                    <a href="https://www.facebook.com/share/15MzrZvtc68/" class="btn"
+                      >Follow Now</a
+                    >
+                </div>
+
+                <div class="social-card youtube">
+                    <i class="fab fa-youtube"></i>
+                    <h3>YouTube SAATHI</h3>
+                    <p>
+                        Watch our awareness videos, interviews, and community
+                        programs on YouTube
+                    </p>
+                    <a
+                      href="https://youtube.com/@shovzm2townps988?si=0okM-XKYfgbo3YOK"
+                      class="btn"
+                      >Subscribe</a
+                    >
+                </div>
+
+                <div class="social-card instagram">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Instagram SAATHI</h3>
+                    <p>
+                        Visual stories of our community initiatives and police work
+                        on Instagram
+                    </p>
+                    <a
+                      href="https://www.instagram.com/saathi_112?utm_source=qr&igsh=MThwajE0ZHpveDUyOA=="
+                      class="btn"
+                      >Follow</a
+                    >
+                </div>
+
+                <div class="social-card whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp SAATHI</h3>
+                    <p>
+                        Quick alerts, emergency updates, and direct communication
+                        through WhatsApp
+                    </p>
+                    <a
+                      href="https://whatsapp.com/channel/0029VbBpykB7oQhVd5g9d31j"
+                      class="btn"
+                      >Join Group</a
+                    >
+                </div>
+
+                <div class="social-card x">
+                    <i class="fab fa-twitter"></i>
+                    <h3>X SAATHI</h3>
+                    <p>Follow SAATHI on X for latest news and updates</p>
+                    <a
+                      href="https://x.com/Saathi_112?t=KMuDx6tO049kJyBl6Ook4w&s=08"
+                      class="btn"
+                      >Follow</a
+                    >
+                </div>
+
+                <div class="social-card aratti">
+                    <i class="fas fa-fire"></i>
+                    <h3>Aratti SAATHI</h3>
+                    <p>Stay connected with local Aratti events and alerts</p>
+                    <a href="https://aratt.ai/@saathi_112" class="btn"
+                      >Connect</a
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> II Town Police Station<br />
+                            Palli Veedhi Area, Vizianagaram, Andhra Pradesh 535002,
+                            India
+                        </li>
+                        <li><i class="fas fa-phone"></i> Emergency: 100</li>
+                        <li><i class="fas fa-envelope"></i> saathi@vizianagaramPolice.gov</li>
+                        <li><i class="fas fa-clock"></i> Always Available for Your Safety</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="https://citizen.appolice.gov.in/jsp/citizens.jsp"
+                              >Report a Crime</a
+                            >
+                        </li>
+                        <li>
+                            <a href="http://vijayawadapolice.ap.gov.in/?page_id=9807"
+                              >Safety Tips</a
+                            >
+                        </li>
+                        <li>
+                            <a href="https://aratt.ai/@saathi_112">Volunteer with SAATHI</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Connect With SAATHI</h3>
+                    <p>Follow us on social media for updates</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/15MzrZvtc68/"
+                          ><i class="fab fa-facebook-f"></i
+                        ></a>
+                        <a href="https://youtube.com/@shovzm2townps988?si=0okM-XKYfgbo3YOK"
+                          ><i class="fab fa-youtube"></i
+                        ></a>
+                        <a
+                          href="https://www.instagram.com/saathi_112?utm_source=qr&igsh=MThwajE0ZHpveDUyOA=="
+                          ><i class="fab fa-instagram"></i
+                        ></a>
+                        <a href="https://whatsapp.com/channel/0029VbBpykB7oQhVd5g9d31j"
+                          ><i class="fab fa-whatsapp"></i
+                        ></a>
+                        <a href="https://x.com/Saathi_112?t=KMuDx6tO049kJyBl6Ook4w&s=08"
+                          ><i class="fab fa-twitter"></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 SAATHI - 2 Town Police, Vizianagaram. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (
+                !navLinks.contains(event.target) &&
+                !mobileMenuBtn.contains(event.target)
+            ) {
+                if (window.innerWidth <= 992) {
+                    navLinks.classList.remove('show');
+                }
+            }
+        });
+
+        // Adjust menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992) {
+                navLinks.classList.add('show');
+            } else {
+                navLinks.classList.remove('show');
+            }
+        });
+
+        // Image Slider Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const sliderTrack = document.querySelector('.slider-track');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            let visibleSlides = 4;
+
+            function getVisibleSlides() {
+                if (window.innerWidth <= 768) {
+                    return 1;
+                } else if (window.innerWidth <= 992) {
+                    return 2;
+                } else {
+                    return 4;
+                }
+            }
+
+            function updateSlider() {
+                visibleSlides = getVisibleSlides();
+                const slideWidth = slides[0].offsetWidth;
+                sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle(
+                        'active',
+                        index === Math.floor(currentIndex / visibleSlides)
+                    );
+                });
+            }
+
+            // Auto slide
+            setInterval(() => {
+                visibleSlides = getVisibleSlides();
+                currentIndex = (currentIndex + 1) % (totalSlides - visibleSlides + 1);
+                updateSlider();
+            }, 3000);
+
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    visibleSlides = getVisibleSlides();
+                    currentIndex = index * visibleSlides;
+                    updateSlider();
+                });
+            });
+
+            // Update slider on window resize
+            window.addEventListener('resize', updateSlider);
+
+            // Initialize slider
+            updateSlider();
+        });
+    </script>
+</body>
+</html>

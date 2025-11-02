@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Activities - SAATHI 2 Town Police, Vizianagaram</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+  :root {
+    --primary: #1a365d;
+    --secondary: #2d3748;
+    --accent: #e53e3e;
+    --light: #f7fafc;
+    --dark: #2d3748;
+  }
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background: #f0f4f8;
+    color: var(--dark);
+    line-height: 1.6;
+  }
+  nav {
+    background-color: #8B0000;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    font-size: 1rem;
+  }
+  nav .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 0;
+  }
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  .nav-links li {
+    margin-left: 20px;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+  }
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+  }
+  .nav-links a.active {
+    background-color: var(--accent);
+    font-weight: 700;
+    color: white;
+    pointer-events: none;
+  }
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  .header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 2rem 0;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+  .header h1 {
+    font-size: 2.5rem;
+  }
+  .header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 0 20px;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    margin: 0.5rem auto 0;
+    width: 80px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  /* Event timeline */
+  .timeline {
+    position: relative;
+    margin-left: 20px;
+    border-left: 3px solid var(--accent);
+    padding-left: 2rem;
+  }
+  .event {
+    margin-bottom: 2.7rem;
+    position: relative;
+  }
+  .event::before {
+    content: '';
+    position: absolute;
+    left: -11px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+  .event-date {
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.4rem;
+    padding: 15px 0 0 0;
+  }
+  .event-time {
+    font-style: italic;
+    color: var(--dark);
+    font-size: 0.9rem;
+    margin-bottom: 0.7rem;
+  }
+  .event-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+  }
+  .event-description {
+    font-size: 1rem;
+    color: #3a3a3a;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  /* Media Carousel */
+  .media-carousel {
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    background: white;
+  }
+  .carousel-track-container {
+    overflow: hidden;
+    position: relative;
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel-slide.active {
+    display: flex;
+  }
+  .carousel-slide img, .carousel-slide video {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    border-radius: 8px;
+  }
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(26, 54, 93, 0.7);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    user-select: none;
+    z-index: 10;
+  }
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  .carousel-btn.next {
+    right: 10px;
+  }
+  .carousel-btn:hover {
+    background: var(--accent);
+  }
+  /* Back button */
+  a.btn-back {
+    display: inline-block;
+    margin: 2rem 0;
+    padding: 10px 25px;
+    background: var(--primary);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  a.btn-back:hover {
+    background: var(--accent);
+  }
+  footer {
+    background: var(--primary);
+    color: #fff;
+    padding: 2rem 20px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+    nav .nav-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+    }
+    .nav-links.show {
+      display: flex;
+    }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <div class="nav-brand">SAATHI</div>
+    <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="initiatives.html">Initiatives</a></li>
+      <li><a href="activities.html" class="active">Activities</a></li>
+      <li><a href="Support.html">Support</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="header">
+  <h1>Activities & Events</h1>
+  <p>Documenting our police community engagement through events and programs.</p>
+</div>
+<div class="container">
+  <div class="timeline">
+    <!-- Event with multiple images/videos carousel -->
+    <div class="event">
+      <div class="event-date">November 1, 2025</div>
+      <div class="event-time">4:00 PM - 5:00 PM</div>
+      <div class="event-title">The SKATHI app event conducted by CI T. Srinivasa Rao Garu at Dr. Besant School</div>
+      <div class="media-carousel">
+        <button class="carousel-btn prev" aria-label="Previous media">&#10094;</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li class="carousel-slide active">
+              <img src="assets/slides/4.jpg" alt="School Teachers Awareness" />
+            </li>
+            <li class="carousel-slide">
+              <video controls>
+                <source src="assets/videos/WhatsApp Video 2025-11-02 at 02.44.02_aae27cd1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </li>
+            <li class="carousel-slide">
+              <img src="assets/slides/1.jpg" alt="Public Demonstration" />
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-btn next" aria-label="Next media">&#10095;</button>
+      </div>
+      <div class="event-description">
+        At Dr. Besant School, CI Sri Vinas Rao Garu led a comprehensive awareness program about the SKATHI app focused on empowering school teachers and the community with knowledge about the app's safety features.<br />
+        The session highlighted instant emergency response and SOS alerts features.<br />
+        The program encouraged wider community awareness for safer environments.
+      </div>
+    </div>
+    <!-- More events can follow here -->
+  </div>
+  <a href="index.html" class="btn-back">&larr; Back to Home</a>
+</div>
+<footer>
+  &copy; 2025 SAATHI - 2 Town Police, Vizianagaram. All rights reserved.
+</footer>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  document.querySelectorAll('.media-carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prevBtn = carousel.querySelector('.carousel-btn.prev');
+    const nextBtn = carousel.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+
+    function updateSlide(newIndex) {
+      if (newIndex < 0) newIndex = slides.length - 1;
+      if (newIndex >= slides.length) newIndex = 0;
+
+      slides[currentIndex].classList.remove('active');
+      slides[newIndex].classList.add('active');
+      currentIndex = newIndex;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      updateSlide(currentIndex - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      updateSlide(currentIndex + 1);
+    });
+  });
+</script>
+</body>
+</html>
